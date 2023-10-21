@@ -1,10 +1,5 @@
 body {
-    background-color: #564db1;
-}
-
-.todo-heading {
-    color: #fff;
-    text-align: center;
+    background-color: #050416;
 }
 
 .typing-container {
@@ -36,6 +31,14 @@ body {
     cursor: pointer;
 }
 
+#todos-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
 .todo-list {
     color: #fff;
     text-align: center;
@@ -47,6 +50,11 @@ body {
     margin-top: 2rem;
     padding: 10px;
     word-wrap: break-word;
+}
+
+.todo-list:hover {
+    box-shadow: 0 0 10px #c560d0;
+    border: 1px solid #c560d0;
 }
 
 .todo-status {
@@ -118,7 +126,7 @@ body {
     color: #fff;
 }
 
-@media (max-width:500px) {
+@media (max-width:600px) {
     #typing-input {
         width: 400px;
         font-size: 15px;
@@ -145,5 +153,38 @@ body {
     .update-btn,
     .close-btn {
         width: 100px;
+    }
+}
+
+.todo-heading {
+    margin: 1rem;
+    font-size: 3rem;
+    color: rgba(225, 225, 225, .01);
+    background-image: url("./heading.avif");
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    animation: animate 15s ease-in-out infinite;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+@keyframes animate {
+
+    0%,
+    100% {
+        background-position: left top;
+    }
+
+    25% {
+        background-position: right bottom;
+    }
+
+    50% {
+        background-position: left bottom;
+    }
+
+    75% {
+        background-position: right top;
     }
 }
